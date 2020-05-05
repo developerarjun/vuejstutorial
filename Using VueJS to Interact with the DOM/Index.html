@@ -21,6 +21,10 @@
         </p>
         <hr>
         <input type="text" v-on:keyup.enter.space="alertMe">
+        <hr>
+        <p>Two Way Binding</p>
+        <input type="text" v-model="name">
+        <p>{{ name }}</p>
     </div>
     <script src="./Main.js">
     </script>
