@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../vue.js"></script>
+    <title>Hello World</title>
+</head>
+<body>
+</body>
+    <div id="app">
+        <h1 v-once>{{ title }}</h1>
+        <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+        <hr>
+        <p v-html="finishedLink"></p>
+        <hr>
+        <button v-on:click="increaseCounter(2,$event)">Increase Me</button>
+        <p>Counter: {{ counter }}</p>
+        <p v-on:mousemove="updateCoordinates">
+            Coordinates: {{ x }} / {{ y }}
+            -<span v-on:mousemove.stop.prevent="">Death Spot</span>
+        </p>
+        <hr>
+        <input type="text" v-on:keyup.enter.space="alertMe">
+    </div>
+    <script src="./Main.js">
+    </script>
+</html>
