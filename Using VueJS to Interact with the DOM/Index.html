@@ -4,33 +4,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../vue.js"></script>
     <title>Hello World</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
 </body>
     <div id="app">
         <h1 v-once>{{ title }}</h1>
-        <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+        <p>{{ sayHello() }} - <a :href="link">Google</a></p>
         <hr>
         <p v-html="finishedLink"></p>
         <hr>
-        <button v-on:click="counter++">Increase</button>
-        <button v-on:click="counter--">Decrease</button>
-        <button v-on:click="secondCounter++">Second Counter</button>
+        <button @click="counter++">Increase</button>
+        <button @click="counter--">Decrease</button>
+        <button @click="secondCounter++">Second Counter</button>
         <p>Counter: {{ counter }} || Second Counter: {{ secondCounter }}</p>
         <p>Console to see result</p>
         <p>Result: {{ result() }} || {{ output }}</p>
-        <p v-on:mousemove="updateCoordinates">
+        <p @mousemove="updateCoordinates">
             Coordinates: {{ x }} / {{ y }}
-            -<span v-on:mousemove.stop.prevent="">Death Spot</span>
+            -<span @mousemove.stop.prevent="">Death Spot</span>
         </p>
         <hr>
-        <input type="text" v-on:keyup.enter.space="alertMe">
+        <input type="text" @keyup.enter.space="alertMe">
         <hr>
         <p>Two Way Binding</p>
         <input type="text" v-model="name">
         <p>{{ name }}</p>
         <hr>
-        
+        <p>CSS</p>
+        <div class="demo" @click="attachedRed = !attachedRed" :class="divClass"></div>
+        <div class="demo" @click="attachedGreen = !attachedGreen" :class="{ green : attachedGreen }"></div>
+        <div class="demo" :class="color"></div>
+        <br>
+        <input type="text" v-model="color">
+        <hr>
+        <p>Setting Styles dynamically</p>
+        <div class="demo" :style="{backgroundColor: colorProperty}"></div>
+        <div class="demo" :style="myStyle"></div>
+        <div class="demo" :style="myStyle, {height: width + 'px'}"></div>
+        <hr>
+        <input type="text" v-model="colorProperty">
+        <input type="text" v-model="width">
     </div>
     <script src="./Main.js">
     </script>
