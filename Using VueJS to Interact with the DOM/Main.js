@@ -7,16 +7,19 @@ new Vue({
         counter: 0,
         x: 0,
         y: 0,
-        name: "Arjun"
+        name: "Arjun",
+        secondCounter: 0
+    },
+    computed:{
+        output : function(){
+            console.log("Computed");
+            return this.counter > 10 ? "Greater than 10": "Lower than 10";
+        }
     },
     methods: {
         sayHello: function(){
             this.title = "Hello World";
             return this.title;
-        },
-        increaseCounter: function(step,event){
-            console.log(event);
-            this.counter += step;
         },
         updateCoordinates: function(event){
             this.x=event.clientX;
@@ -24,6 +27,10 @@ new Vue({
         },
         alertMe : function(){
             alert("Alert");
+        },
+        result: function(){
+            console.log("Result");
+            return this.counter > 10 ? "Greater than 10": "Lower than 10";
         }
     }
 });

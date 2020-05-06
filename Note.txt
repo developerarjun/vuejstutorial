@@ -20,3 +20,8 @@ there is this layer in the middle and this layer is the vuejs instance which tak
 creates a template, renders this template by . 	 
 
 
+
+Computed:
+	call when changes 
+Methods:
+	call every times
