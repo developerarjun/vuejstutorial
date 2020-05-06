@@ -13,8 +13,12 @@
         <hr>
         <p v-html="finishedLink"></p>
         <hr>
-        <button v-on:click="increaseCounter(6,$event)">Increase Me</button>
-        <p>Counter: {{ counter }}</p>
+        <button v-on:click="counter++">Increase</button>
+        <button v-on:click="counter--">Decrease</button>
+        <button v-on:click="secondCounter++">Second Counter</button>
+        <p>Counter: {{ counter }} || Second Counter: {{ secondCounter }}</p>
+        <p>Console to see result</p>
+        <p>Result: {{ result() }} || {{ output }}</p>
         <p v-on:mousemove="updateCoordinates">
             Coordinates: {{ x }} / {{ y }}
             -<span v-on:mousemove.stop.prevent="">Death Spot</span>
@@ -25,6 +29,8 @@
         <p>Two Way Binding</p>
         <input type="text" v-model="name">
         <p>{{ name }}</p>
+        <hr>
+        
     </div>
     <script src="./Main.js">
     </script>
