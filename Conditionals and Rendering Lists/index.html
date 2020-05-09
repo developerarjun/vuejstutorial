@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../vue.js"></script>
+    <title>Hello World</title>
+</head>
+<body>
+</body>
+    <div id="app">
+        <p v-if="show">You can see me ..</p>
+        <p v-else>Now you can see me.</p>
+        <p v-show="show">John Cena</p>
+        <button @click="show = !show">Switch</button>
+        <hr>
+        <p>Fetch list</p>
+        <br>
+        <p>Ingredients List</p>
+        <ul>
+            <li v-for="(ingredient, i) in ingredients">{{ ingredient }} ({{ i }})</li>
+        </ul>
+        <p>Template</p>
+        <template v-for="(ingredient, index) in ingredients">
+            <h1>{{ ingredient }}</h1>
+            <p>{{ index }}</p>
+        </template>
+        <hr>
+        <p>Person List</p>
+        <ul>
+            <li v-for="person in persons">
+                <div v-for="(value,key,index) in person">{{key}}: {{value}} ({{ index }})</div>
+            </li>
+        </ul>
+        <br>
+        <p> Loop up to 10</p>
+        <span v-for="n in 10">{{ n }}</span>
+    </div>
+    <script src="./main.js">
+    </script>
+</html>
